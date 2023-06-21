@@ -22,9 +22,6 @@ startCounter =0
 
 
 
-#print(me.get_battery())
-
-#me.streamon()
 ######################## 
 
 frameWidth = width
@@ -169,13 +166,12 @@ while True:
         display(imgContour)
     
     ################# FLIGHT
-
+        
         stack = stackImages(0.9, ([img, result], [imgDil, imgContour]))
         cv2.imshow('Horizontal Stacking', stack)
-    else:
-        break
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        cv2.destroyAllWindows()
-        break
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            cv2.destroyAllWindows()
+            break
 
 
